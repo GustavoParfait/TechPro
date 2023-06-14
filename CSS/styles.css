@@ -1,0 +1,73 @@
+:root {
+
+/*---------custom properties----------*/
+
+/*colors Start*/
+    --primaryColor: #1073ba;
+    --secondaryColor: #00da55;
+    --grayColor: #3b3b3b;
+    --lightGrayColor: #e1e1e1;
+    --whiteColor: #ffffff;
+    --blackColor: #1f1f1f;
+/*colors End*/
+
+    --separation: 5rem;
+
+/*Fonts Start*/
+    --fontPrimary: 'Roboto', sans-serif;
+    --fontSecondary: 'Lato', sans-serif;
+/*Fonts End*/
+
+}
+
+/*----------Reset----------*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*convert 1rem into 10px*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/*----------Globals----------*/
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    font-family: var(--fontSecondary);
+    margin: calc(var(--separation) / 2);
+}
+
+h1 {
+    font-size: 4.4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*----------utilities----------*/
+
+.textCenter {
+    text-align: center;
+}
