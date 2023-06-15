@@ -37,7 +37,7 @@ body {
 }
 
 /*----------Globals----------*/
-.contenedor {
+.container {
     max-width: 120rem;
     width: 90%;
     margin: 0 auto;
@@ -64,6 +64,7 @@ h3 {
 img {
     max-width: 100%;
     display: block;
+    height: auto;
 }
 
 /*----------utilities----------*/
@@ -71,3 +72,35 @@ img {
 .textCenter {
     text-align: center;
 }
+
+/*-----end of reset, globals and utilities-----*/
+
+/*-----Hearder Start-----*/
+.header {
+    background-color: var(--blackColor);
+    padding: calc(var(--separation) * 3) 0;
+    color: var(--whiteColor);
+}
+
+@media (min-width: 768px) { 
+    .contentHeader {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.textHeader {
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+    .textHeader {
+    text-align: left;
+    }
+}
+
+.tagLineProducto {
+    font-size: 3rem;
+    font-weight: 900;
+}
+/*-----Hearder End-----*/
