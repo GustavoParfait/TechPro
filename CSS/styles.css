@@ -73,6 +73,14 @@ img {
     text-align: center;
 }
 
+/*----------Gradients----------*/
+.greenGradient {
+    color: transparent;
+    background: linear-gradient(to right, var(--primaryColor) 0%, var(--secondaryColor) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 /*-----end of reset, globals and utilities-----*/
 
 /*-----Hearder Start-----*/
@@ -91,16 +99,52 @@ img {
 
 .textHeader {
     text-align: center;
+    padding-top: var(--separation);
 }
 
 @media (min-width: 768px) { 
     .textHeader {
-    text-align: left;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
     }
+}
+
+.textHeader p {
+    margin: 0;
 }
 
 .tagLineProducto {
     font-size: 3rem;
     font-weight: 900;
 }
+
+.nameProduct {
+    font-size: 6rem;
+    margin: 0;
+}
+
+@media (min-width: 768px) { 
+    .nameProduct {
+        font-size: 10rem;
+        line-height: 1;
+    }
+}
+
+.productPrice span {
+    font-size: 6rem;
+    font-weight: 900;
+}
+
 /*-----Hearder End-----*/
+/*-----Icons Start-----*/
+@media (min-width: 768px) { 
+    .nameProduct {
+        font-size: 10rem;
+        line-height: 1;
+    }
+}
+
+/*-----Icons End-----*/
