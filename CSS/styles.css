@@ -176,10 +176,53 @@ img {
     text-transform: uppercase;
     margin-top: calc(var(--separation) / 2);
 }
-
+/*-----Icons End-----*/
+/*-----About Techpro Start-----*/
 .aboutTechpro {
-    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0% );
+    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
+    background-position: right;
+    background-repeat: repeat, no-repeat;
+    background-size: 100%, 110rem;
+}
+
+@media (min-width: 768px) { 
+    .aboutTechpro {
+        background-image: linear-gradient(to left, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
+        background-repeat: repeat, no-repeat;
+        column-gap: 4rem;
+    }
+}
+
+.aboutTechproGrid {
+    display: grid;
+    grid-template-rows: repeat(2, 40rem);
+    row-gap: var(--separation);
+}
+
+@media (min-width: 768px) { 
+    .aboutTechproGrid {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.textAboutTech {
+    grid-row: 2 / 3;
+    color: var(--whiteColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.textAboutTech h2 {
+    font-size: 3.5rem;
+}
+
+.textAboutTech p {
+    font-size: 2rem;
+    line-height: 2;
 }
 
 
-/*-----Icons End-----*/
+/*-----About Techpro End-----*/
