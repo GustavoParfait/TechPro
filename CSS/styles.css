@@ -1,7 +1,5 @@
 :root {
-
 /*---------custom properties----------*/
-
 /*colors Start*/
     --primaryColor: #1073ba;
     --secondaryColor: #00da55;
@@ -46,7 +44,7 @@ body {
 h1, h2, h3 {
     font-weight: 900;
     font-family: var(--fontSecondary);
-    margin: calc(var(--separation) / 2);
+    margin: calc( var(--separation) / 2 ) 0;
 }
 
 h1 {
@@ -82,7 +80,6 @@ img {
 }
 
 /*-----end of reset, globals and utilities-----*/
-
 /*-----Hearder Start-----*/
 .header {
     background-color: var(--blackColor);
@@ -179,17 +176,39 @@ img {
 /*-----Icons End-----*/
 /*-----About Techpro Start-----*/
 .aboutTechpro {
-    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
     background-position: right;
     background-repeat: repeat, no-repeat;
     background-size: 100%, 110rem;
 }
 
+.notavif.notwebp .aboutTechpro {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
+}
+
+.webp .aboutTechpro {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.webp);
+}
+
+.avif .aboutTechpro {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.avif);
+}
+
 @media (min-width: 768px) { 
     .aboutTechpro {
-        background-image: linear-gradient(to left, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
         background-repeat: repeat, no-repeat;
-        column-gap: 4rem;
+        background-size: 100%, cover;
+    }
+
+    .notavif.notwebp .aboutTechpro {
+        background-image: linear-gradient(to left, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.jpg);
+    }
+
+    .webp .aboutTechpro {
+        background-image: linear-gradient(to left, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.webp);
+    }
+
+    .avif .aboutTechpro {
+        background-image: linear-gradient(to left, transparent 50%, var(--primaryColor) 0%), url(../img/imagen-mujer.avif);
     }
 }
 
@@ -202,17 +221,22 @@ img {
 @media (min-width: 768px) { 
     .aboutTechproGrid {
         grid-template-rows: unset;
+        row-gap: unset;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 4rem;
+        padding: calc(var(--separation) * 2);
     }
 }
 
 .textAboutTech {
     grid-row: 2 / 3;
     color: var(--whiteColor);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+}
 
+@media (min-width: 768px) { 
+    .textAboutTech {
+        padding-bottom: 0;
+    }
 }
 
 .textAboutTech h2 {
@@ -223,6 +247,246 @@ img {
     font-size: 2rem;
     line-height: 2;
 }
-
-
 /*-----About Techpro End-----*/
+/*-----Main Start-----*/
+.models {
+    padding: var(--separation) 0;
+}
+
+.modelsHeader {
+    font-size: 6rem;
+    margin-bottom: var(--separation);
+}
+
+.modelLists {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+    .modelLists {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 20rem);
+        gap: 4rem;
+    }
+}
+
+.model {
+    background-color: var(--lightGrayColor);
+    margin-bottom: 2rem;
+    padding-left: 4rem;
+    color: var(--primaryColor);
+    border-radius: 2rem;
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-size: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-property: transform background-size background-position;
+    transition-duration: 300ms;
+}
+
+.model:hover {
+    transform: scale(1.1);
+    background-size: 20rem;
+    background-position: 140% center;
+}
+
+@media (min-width: 600px) { 
+    .model {
+        background-position: 80% center;
+        background-size: 15rem;
+    }
+
+    .model:hover {
+        transform: scale(1.1);
+        background-size: 20rem;
+        background-position: 80% center;
+    }
+}
+
+@media (min-width: 768px) { 
+    .model {
+        background-position: 95% center;
+        background-size: 15rem;
+        margin-bottom: 0;
+    }
+
+    .model:hover {
+        transform: scale(1.1);
+        background-size: 20rem;
+        background-position: 150% center;
+    }
+}
+
+.model h3 {
+    font-size: 2.4rem;
+}
+
+.price {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0;
+}
+
+.model:first-of-type {
+    margin-bottom: 0;
+}
+
+.modelX {
+    background-image: url(../img/modelo-x.svg);
+}
+
+.modelY {
+    background-image: url(../img/modelo-y.svg);
+}
+
+.modelZ {
+    background-image: url(../img/modelo-z.svg);
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+@media (min-width: 768px) { 
+    .modelZ {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        background-size: 25rem;
+        background-position: 50%, center;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0;
+    }
+
+    .modelZ:hover {
+        transform: scale(1.1);
+        background-size: 30rem;
+        background-position: 50% center;
+    }
+     .modelZ h3 {
+        font-size: 4rem;
+     }
+}
+
+.modelZ .price {
+    font-size: 6rem;
+}
+/*-----Main End-----*/
+/*----------Last Seccion Start----------*/
+.newsLetter {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%, 70rem;
+}
+
+.notavif.notwebp .newsLetter {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.jpg);
+}
+
+.webp .newsLetter {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.webp);
+}
+
+.avif .newsLetter {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.avif);
+}
+
+@media (min-width: 768px) {
+    .newsLetter {
+        background-position: center, -21rem 0rem;
+        background-size: 100%, 100rem;
+    }
+
+    .notavif.notwebp .newsLetter {
+        background-image: linear-gradient(to right, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.jpg);
+    }
+    
+    .webp .newsLetter {
+        background-image: linear-gradient(to right, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.webp);
+    }
+    
+    .avif .newsLetter {
+        background-image: linear-gradient(to right, transparent 50%, var(--whiteColor) 0% ), url(../img/newsletter.avif);
+    }
+
+}
+
+.newsLetterContent {
+    display: grid;
+    grid-template-rows: repeat(2, 30rem);
+    gap: var(--separation);
+}
+
+@media (min-width: 768px) { 
+    .newsLetterContent {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.newsLetterText {
+    grid-row: 2 / 3;
+}
+
+@media (min-width: 768px) {
+    .newsLetterText {
+        grid-row: unset;
+        grid-column: 2 / 3;
+    }
+}
+
+.newsLetterForm input[type="email"] {
+    width: 100%;
+    padding: 1rem;
+}
+
+.newsLetterForm input[type="submit"] {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;
+}
+
+.newsLetterForm input[type="submit"]:hover {
+    background-color: #01a03e;
+}
+/*----------Last Seccion End----------*/
+/*----------Footer Start----------*/
+.footer p {
+    text-align: center;
+    font-family: var(--fontSecondary);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--primaryColor);
+    padding-top: 10rem;
+}
+
+@media (min-width: 480px) { 
+    .footer p {
+        font-size: 1.2rem;
+        padding-top: 3rem;
+    }
+}
+
+@media (min-width: 600px) { 
+    .footer p {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) { 
+    .footer p {
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+    }
+}
+/*----------Footer Start----------*/
